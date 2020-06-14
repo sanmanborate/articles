@@ -1,4 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Article" representedClassName="Article" elementID="article" syncable="YES" codeGenerationType="class">
+        <attribute name="comments" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" elementID="comments"/>
+        <attribute name="content" attributeType="String" elementID="content"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO" elementID="createdAt"/>
+        <attribute name="id" attributeType="String" elementID="id"/>
+        <attribute name="likes" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" elementID="likes"/>
+        <relationship name="media" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Media" elementID="media"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="User" elementID="users"/>
+    </entity>
+    <entity name="Media" representedClassName="Media" elementID="media" syncable="YES" codeGenerationType="class">
+        <attribute name="blogId" attributeType="String" elementID="blogId"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO" elementID="createdAt"/>
+        <attribute name="id" attributeType="String" elementID="id"/>
+        <attribute name="image" optional="YES" attributeType="URI" elementID="image"/>
+        <attribute name="title" attributeType="String" elementID="title"/>
+        <attribute name="url" attributeType="URI" elementID="url"/>
+    </entity>
+    <entity name="User" representedClassName="User" elementID="user" syncable="YES" codeGenerationType="class">
+        <attribute name="about" attributeType="String" elementID="about"/>
+        <attribute name="avatar" attributeType="URI" elementID="avatar"/>
+        <attribute name="blogId" attributeType="String" elementID="blogId"/>
+        <attribute name="city" attributeType="String" elementID="city"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO" elementID="createdAt"/>
+        <attribute name="designation" attributeType="String" elementID="designation"/>
+        <attribute name="id" attributeType="String" elementID="id"/>
+        <attribute name="lastname" attributeType="String" elementID="lastname"/>
+        <attribute name="name" attributeType="String" elementID="name"/>
+    </entity>
+    <elements>
+        <element name="Article" positionX="-251.40625" positionY="-70.95703125" width="128" height="148"/>
+        <element name="Media" positionX="0" positionY="-59.79296875" width="128" height="133"/>
+        <element name="User" positionX="-13.22265625" positionY="85.27734375" width="128" height="178"/>
+    </elements>
 </model>
