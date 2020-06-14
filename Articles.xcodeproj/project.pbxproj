@@ -15,6 +15,7 @@
 		18A308322495F4E100C81242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A308312495F4E100C81242 /* Assets.xcassets */; };
 		18A308352495F4E100C81242 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A308332495F4E100C81242 /* LaunchScreen.storyboard */; };
 		18A308402495F4E200C81242 /* ArticlesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3083F2495F4E200C81242 /* ArticlesTests.swift */; };
+		18A3084C2495F5FA00C81242 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3084B2495F5FA00C81242 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		18A3083B2495F4E200C81242 /* ArticlesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArticlesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A3083F2495F4E200C81242 /* ArticlesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTests.swift; sourceTree = "<group>"; };
 		18A308412495F4E200C81242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18A3084B2495F5FA00C81242 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		18A308242495F4E000C81242 /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				18A3084A2495F5D200C81242 /* CoreDataStack */,
 				18A308252495F4E000C81242 /* AppDelegate.swift */,
 				18A308272495F4E000C81242 /* SceneDelegate.swift */,
 				18A308292495F4E000C81242 /* ViewController.swift */,
@@ -100,6 +103,14 @@
 				18A308412495F4E200C81242 /* Info.plist */,
 			);
 			path = ArticlesTests;
+			sourceTree = "<group>";
+		};
+		18A3084A2495F5D200C81242 /* CoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				18A3084B2495F5FA00C81242 /* CoreDataStack.swift */,
+			);
+			path = CoreDataStack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A3084C2495F5FA00C81242 /* CoreDataStack.swift in Sources */,
 				18A308302495F4E000C81242 /* Articles.xcdatamodeld in Sources */,
 				18A3082A2495F4E000C81242 /* ViewController.swift in Sources */,
 				18A308262495F4E000C81242 /* AppDelegate.swift in Sources */,
