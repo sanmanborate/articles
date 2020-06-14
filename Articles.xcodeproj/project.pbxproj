@@ -23,6 +23,8 @@
 		18A3086A24960DB300C81242 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3086424960DB300C81242 /* User+CoreDataClass.swift */; };
 		18A3086B24960DB300C81242 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3086524960DB300C81242 /* User+CoreDataProperties.swift */; };
 		18A3086E24960E1700C81242 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3086D24960E1700C81242 /* Extensions.swift */; };
+		18A30871249617ED00C81242 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A30870249617ED00C81242 /* ArticleViewModel.swift */; };
+		18A3087324961A4500C81242 /* ArticleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3087224961A4500C81242 /* ArticleCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		18A3086424960DB300C81242 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		18A3086524960DB300C81242 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		18A3086D24960E1700C81242 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		18A30870249617ED00C81242 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		18A3087224961A4500C81242 /* ArticleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		18A308242495F4E000C81242 /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				18A3086F249617D600C81242 /* ViewModels */,
 				18A3086C24960E0900C81242 /* Helpers */,
 				18A3084D2495FD7F00C81242 /* Models */,
 				18A3084A2495F5D200C81242 /* CoreDataStack */,
@@ -148,6 +153,15 @@
 				18A3086D24960E1700C81242 /* Extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		18A3086F249617D600C81242 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				18A30870249617ED00C81242 /* ArticleViewModel.swift */,
+				18A3087224961A4500C81242 /* ArticleCellViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,8 +267,10 @@
 			files = (
 				18A3086824960DB300C81242 /* Media+CoreDataClass.swift in Sources */,
 				18A3086624960DB300C81242 /* Article+CoreDataClass.swift in Sources */,
+				18A30871249617ED00C81242 /* ArticleViewModel.swift in Sources */,
 				18A3084C2495F5FA00C81242 /* CoreDataStack.swift in Sources */,
 				18A308302495F4E000C81242 /* Articles.xcdatamodeld in Sources */,
+				18A3087324961A4500C81242 /* ArticleCellViewModel.swift in Sources */,
 				18A3086A24960DB300C81242 /* User+CoreDataClass.swift in Sources */,
 				18A3082A2495F4E000C81242 /* ViewController.swift in Sources */,
 				18A308262495F4E000C81242 /* AppDelegate.swift in Sources */,
