@@ -15,7 +15,7 @@ class RestClient {
     func get(url : URL, headers : [String:String] = [:] ,callback : @escaping CompletionHandler) {
         let urlRequest = URLRequest(url: url)
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
-            callback(data == nil, data, error)
+            callback(data != nil, data, error)
         }
         task.resume()
     }

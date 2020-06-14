@@ -25,9 +25,9 @@ class APIClient {
     
     var restClient = RestClient()
     
-    func getArticlePage(number : Int,ofSize : Int, callback : @escaping CompletionHandler) {
+    func getArticleAtPage(number : Int,limit : Int, callback : @escaping CompletionHandler) {
         var components = URLComponents(string: URLHelper.articlesUrl)!
-        let parameters = ["page":number, "limit":ofSize]
+        let parameters = ["page":number, "limit":limit]
         components.queryItems = parameters.map { (arg) -> URLQueryItem in
             let (key, value) = arg
             return URLQueryItem(name: key, value: "\(value)")

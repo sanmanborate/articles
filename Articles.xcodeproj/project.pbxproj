@@ -28,6 +28,8 @@
 		18A308762496252100C81242 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A308752496252100C81242 /* RestClient.swift */; };
 		18A308782496277C00C81242 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A308772496277C00C81242 /* APIClient.swift */; };
 		18A3087A2496282400C81242 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A308792496282400C81242 /* URLHelper.swift */; };
+		18A308812496433900C81242 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A308802496433900C81242 /* SyncManager.swift */; };
+		18A3088324964D8800C81242 /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3088224964D8800C81242 /* ArticleManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		18A308752496252100C81242 /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		18A308772496277C00C81242 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		18A308792496282400C81242 /* URLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
+		18A308802496433900C81242 /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
+		18A3088224964D8800C81242 /* ArticleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		18A308242495F4E000C81242 /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				18A3087D24963F1A00C81242 /* Manager */,
 				18A30874249624FE00C81242 /* WebServiceClients */,
 				18A3086F249617D600C81242 /* ViewModels */,
 				18A3086C24960E0900C81242 /* Helpers */,
@@ -179,6 +184,15 @@
 				18A308772496277C00C81242 /* APIClient.swift */,
 			);
 			path = WebServiceClients;
+			sourceTree = "<group>";
+		};
+		18A3087D24963F1A00C81242 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				18A308802496433900C81242 /* SyncManager.swift */,
+				18A3088224964D8800C81242 /* ArticleManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,12 +307,14 @@
 				18A3086A24960DB300C81242 /* User+CoreDataClass.swift in Sources */,
 				18A3082A2495F4E000C81242 /* ViewController.swift in Sources */,
 				18A308262495F4E000C81242 /* AppDelegate.swift in Sources */,
+				18A3088324964D8800C81242 /* ArticleManager.swift in Sources */,
 				18A3086E24960E1700C81242 /* Extensions.swift in Sources */,
 				18A3086B24960DB300C81242 /* User+CoreDataProperties.swift in Sources */,
 				18A308282495F4E000C81242 /* SceneDelegate.swift in Sources */,
 				18A3086724960DB300C81242 /* Article+CoreDataProperties.swift in Sources */,
 				18A308762496252100C81242 /* RestClient.swift in Sources */,
 				18A3086924960DB300C81242 /* Media+CoreDataProperties.swift in Sources */,
+				18A308812496433900C81242 /* SyncManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
