@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var activittIndicator: UIActivityIndicatorView!
     let articleViewModel = ArticleViewModel()
     @IBOutlet weak var tableview: UITableView!
     
@@ -63,18 +64,27 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: ArticleViewModelDelegate {
     func didStartFetching() {
-        
+        activittIndicator.startAnimating()
+        view.isUserInteractionEnabled = false
     }
     
     func didFetchArticleAt(page: Int, count: Int) {
-        print("page : \(page) count : \(count)")
         DispatchQueue.main.async {
+            self.enableUserInteraction()
             self.tableview.reloadData()
         }
     }
     
     func didFailWith(error: String) {
+        DispatchQueue.main.async {
+            self.enableUserInteraction()
+        }
         print("error : \(error)")
+    }
+    
+    func enableUserInteraction() {
+        self.activittIndicator.stopAnimating()
+        self.view.isUserInteractionEnabled = true
     }
     
 }

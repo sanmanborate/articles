@@ -23,10 +23,16 @@
                                     <outlet property="delegate" destination="8bC-Xf-vdC" id="I2x-kV-Qz2"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="yNV-vU-MCv">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="QWO-WK-uak" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ftb-GX-MRn"/>
+                            <constraint firstItem="yNV-vU-MCv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Mpf-0C-sH0"/>
+                            <constraint firstItem="yNV-vU-MCv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NT7-Im-lSo"/>
                             <constraint firstItem="QWO-WK-uak" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="apa-xw-mGy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QWO-WK-uak" secondAttribute="bottom" id="btG-vC-g10"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QWO-WK-uak" secondAttribute="trailing" id="lRw-Id-sk1"/>
@@ -34,6 +40,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activittIndicator" destination="yNV-vU-MCv" id="ZIE-Gk-oLX"/>
                         <outlet property="tableview" destination="QWO-WK-uak" id="53d-ip-UZH"/>
                     </connections>
                 </viewController>
