@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Reachability
 protocol ArticleManagerDelegate {
     func didFetchaArticles(articles : [Article], at page: Int)
     func didFailToFetchArticle(at page: Int, error: Error?)
@@ -21,8 +22,32 @@ class ArticleManager {
     let syncManager = SyncManager()
     var delegate : ArticleManagerDelegate?
     
-    var isReachable : Bool{
-        true
+    var isReachable : Bool = false
+    let reachability = try? Reachability()
+    
+    init() {
+        setupReachability()
+        isReachable = reachability?.connection != Reachability.Connection.unavailable
+    }
+    func setupReachability() {
+        reachability?.whenReachable = { [weak self] reachability in
+            if reachability.connection == .wifi {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+            self?.isReachable = true
+        }
+        reachability?.whenUnreachable = { _ in
+            self.isReachable = false
+            print("Not reachable")
+        }
+        
+        do {
+            try reachability?.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
     }
     
     func getArticlesAt(page: Int, limit: Int) {
@@ -30,7 +55,7 @@ class ArticleManager {
             apiClient.getArticleAtPage(number: page, limit: limit) { [weak self] (success, data, error) in
                 if let strongSelf = self {
                     if success,let data = data {
-                        let articles = strongSelf.syncManager.syncArticlesWith(data: data)
+                        let articles = strongSelf.syncManager.syncArticlesWith(data: data, page: page,limit: limit)
                         if (articles.count == 0){
                             strongSelf.delegate?.didFailToFetchArticle(at: page, error: ArticleManagerError.noData)
                             return

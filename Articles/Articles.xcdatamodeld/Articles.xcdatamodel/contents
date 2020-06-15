@@ -8,6 +8,11 @@
         <attribute name="likes" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" elementID="likes"/>
         <relationship name="media" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Media" elementID="media"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="User" elementID="users"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Media" representedClassName="Media" elementID="media" syncable="YES">
         <attribute name="blogId" attributeType="String" elementID="blogId"/>

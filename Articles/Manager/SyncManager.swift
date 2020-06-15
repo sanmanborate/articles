@@ -18,7 +18,7 @@ class SyncManager {
     
     init() {}
     
-    func syncArticlesWith(data: Data) -> [Article] {
+    func syncArticlesWith(data: Data, page: Int, limit: Int) -> [Article] {
         do {
             if let decoded = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String:Any]]{
                 //find ids of new records
@@ -30,7 +30,7 @@ class SyncManager {
                 do {
                     try batchDeleteArticle(with: ids, taskContext: taskContext)
                     try saveArticles(withData: data, taskContext: taskContext)
-                    return fetchArticlesAt()
+                    return fetchArticlesAt(pageNumber: page, limit: limit)
                 } catch {
                     print("Error: \(error)\nCould not batch delete existing records.")
                 }
@@ -68,8 +68,11 @@ class SyncManager {
         let fetchRequest = NSFetchRequest<Article>(entityName: "Article")
         fetchRequest.fetchOffset = (pageNumber - 1)*limit
         fetchRequest.fetchLimit = limit
+        let sectionSortDescriptor = NSSortDescriptor(key: "id", ascending: true, selector: #selector(NSString.localizedStandardCompare))
+        fetchRequest.sortDescriptors = [sectionSortDescriptor]
         do {
             let articles = try viewContext.fetch(fetchRequest)
+            print("executed fetch request \(pageNumber)")
             return articles
         } catch  {
             print("Error: \(error)\nCould not fetch existing records.")

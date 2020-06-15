@@ -35,6 +35,15 @@ class ArticleCellViewModel {
     
     init(article : Article) {
         self.article = article
+        setUserName()
+        setDesignation()
+        setUserAvatar()
+        setArticleImage()
+        setArticleContent()
+        setArticleTitle()
+        setArticleUrl()
+        setArticleLikes()
+        setArticleComments()
     }
     
     func setUserName() {
@@ -87,7 +96,7 @@ class ArticleCellViewModel {
     func setArticleLikes() {
         let likesCount = article.likes
         if likesCount >= 1000 {
-            self.likes = String(format: "%.1fK Likes", (likesCount/1000))
+            self.likes = String(format: "\(likesCount/1000)K Likes")
         }
         else {
             self.likes = "\(likesCount) Likes"
@@ -97,7 +106,7 @@ class ArticleCellViewModel {
     func setArticleComments() {
         let commentsCount = article.comments
         if commentsCount >= 1000 {
-            self.comments = String(format: "%.1fK Comments", (commentsCount/1000))
+            self.comments = String(format: "\(commentsCount/1000)K Comments")
         }
         else{
             self.comments = "\(commentsCount) Comments"
