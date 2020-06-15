@@ -8,6 +8,7 @@ target 'Articles' do
   # Pods for Articles
   pod 'Kingfisher'
   pod 'ReachabilitySwift'
+  pod 'Toast-Swift'
   
   target 'ArticlesTests' do
     inherit! :search_paths
