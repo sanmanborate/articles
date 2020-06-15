@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class ViewController: UIViewController {
     
@@ -78,6 +79,7 @@ extension ViewController: ArticleViewModelDelegate {
     func didFailWith(error: String) {
         DispatchQueue.main.async {
             self.enableUserInteraction()
+            self.view.makeToast(error)
         }
         print("error : \(error)")
     }
